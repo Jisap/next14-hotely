@@ -9,6 +9,7 @@ import { Label } from "./ui/label"
 import { motion } from "framer-motion"
 import { fadeIn } from "@/variants"
 import DatePicker from "./DatePicker"
+import GuestSelect from "./GuestSelect"
 
 
 
@@ -42,7 +43,11 @@ const SearchBox = () => {
       </div>
 
       {/* select, checkbox, btn */}
-
+        <div>
+          {/* select */}
+          <Label>Guests</Label>
+          <GuestSelect />
+        </div>
     </div>
   )
 }
