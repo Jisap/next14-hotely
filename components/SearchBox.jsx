@@ -17,9 +17,10 @@ import GuestSelect from "./GuestSelect"
 
 const SearchBox = () => {
   return (
-    <div>
+    <div className="w-full max-w-[488px] bg-white max-h-max flex flex-col
+    border border-outline rounded-[20px] p-10">
       {/* input, calendar, date picker */}
-      <div>
+      <div className="mb-[20px]">
         {/* label */}
         <Label htmlFor='destination'>Where are you going ?</Label>
         {/* input & icon */}
@@ -28,14 +29,14 @@ const SearchBox = () => {
           <MapPin size={24} className="absolute right-6 text-black" />
         </div>
         {/* date pickers */}
-        <div>
+        <div className="flex flex-col xl:flex-row gap-x-[30px] gap-y-5 xl:gap-y-0">
           {/* check in */}
-          <div>
+          <div className="flex flex-col flex-1">
             <Label>Check in</Label>
             <DatePicker />
           </div>
           {/* check out */}
-          <div>
+          <div className="flex flex-col flex-1">
             <Label>Check out</Label>
             <DatePicker />
           </div>
@@ -43,11 +44,27 @@ const SearchBox = () => {
       </div>
 
       {/* select, checkbox, btn */}
-        <div>
+        <div className="flex flex-col">
           {/* select */}
-          <Label>Guests</Label>
-          <GuestSelect />
+          <div className="flex flex-col flex-1 mb-[24px]">
+            <Label>Guests</Label>
+            <GuestSelect />
+          </div>
         </div>
+        {/* checkbox */}
+        <div className="flex items-center gap-x-3 mb-[24px]">
+          <Checkbox id="terms"/>
+          <Label 
+            htmlFor="terms"
+            className="font-semibold mb-0"
+          >
+            Pay when checking in ?
+          </Label>
+        </div>
+        {/* btn */}
+        <Button size="lg" variant="accent">
+          Search Hotel
+        </Button>
     </div>
   )
 }

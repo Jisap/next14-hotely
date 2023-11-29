@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 const GuestSelect = () => {
   return (
     <Select>
-      <SelectTrigger>
+      <SelectTrigger className="w-full">
         <SelectValue placeholder="How many guests ?" />
       </SelectTrigger>
       <SelectContent>
