@@ -17,8 +17,13 @@ import GuestSelect from "./GuestSelect"
 
 const SearchBox = () => {
   return (
-    <div className="w-full max-w-[488px] bg-white max-h-max flex flex-col
-    border border-outline rounded-[20px] p-10">
+    <motion.div 
+      variants={fadeIn("up", 0.2)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{once: false, amount: 0}}
+      className="w-full max-w-[488px] bg-white max-h-max flex flex-col
+      border border-outline rounded-[20px] p-10">
       {/* input, calendar, date picker */}
       <div className="mb-[20px]">
         {/* label */}
@@ -65,7 +70,7 @@ const SearchBox = () => {
         <Button size="lg" variant="accent">
           Search Hotel
         </Button>
-    </div>
+    </motion.div>
   )
 }
 
