@@ -8,7 +8,7 @@ import Link from "next/link"
 
 
 
-const MobileNav = async () => {
+const MobileNav = () => {
   
   return (
     <Sheet>
