@@ -1,3 +1,5 @@
+
+
 import Link from "next/link"
 
 const links = [
@@ -22,21 +24,19 @@ const links = [
 
 const Nav = ({containerStyles, listStyles}) => {
   return (
-    <Nav className={`${containerStyles}`}>
+    <nav className={`${containerStyles}`}>
       <ul className={`${listStyles}`}>
         {
-          links.map((link, index) => {
-            return (
+          links.map((link, index) => (
               <li key={index}>
                 <Link href={link.path}>
                   {link.pathname}
                 </Link>
               </li>
-            )  
-          })
+          ))
         }
       </ul>
-    </Nav>
+    </nav>
   )
 }
 
