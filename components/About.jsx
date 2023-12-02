@@ -12,18 +12,24 @@ import Stats from "./Stats"
 
 const About = () => {
   return (
-    <section className="py-12 xl:pt-10 xl:pb-24">
+    <section className="py-12 xl:pt-0 xl:pb-24">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row">
           {/* img */}
-          <div className="flex-1 relative">
+          <motion.div 
+            className="flex-1 relative"
+            variants={fadeIn('right', 0.2)}  
+            initial="hidden"
+            whileInView={"show"}
+            viewPort={{once: false, amount: 0.4}}
+          >
             <Image 
               src={'/about/img2.png'}
               width={559}
               height={721}
               alt=''
             />
-          </div>
+          </motion.div>
           {/* text */}
           <div className="xl:max-w-[470px]">
             <h2 className="h2 mb-[38px]">About Hotely</h2>
