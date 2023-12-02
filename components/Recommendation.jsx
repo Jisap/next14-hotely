@@ -5,6 +5,10 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css'
 import { Button } from "./ui/button";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/variants";
+
+
 
 const recommendationData = [
   {
@@ -56,7 +60,21 @@ const recommendationData = [
 
 const Recommendation = () => {
   return (
-    <div>Recommendation</div>
+    <section>
+      {/* slider */}
+      <div>
+        <Swiper>
+          {recommendationData.map((hotel, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <div>text</div>
+                <div>image & testimonial text</div>
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
+      </div>
+    </section>
   )
 }
 
