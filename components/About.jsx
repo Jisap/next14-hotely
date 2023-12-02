@@ -11,8 +11,18 @@ import Stats from "./Stats"
 
 
 const About = () => {
+
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)"
+  });
+
+  const [ref, inView] = useInView({
+    threshold: !isMobile ? 0.5 : null
+  });
+  
+
   return (
-    <section className="py-12 xl:pt-0 xl:pb-24">
+    <section className="py-12 xl:pt-0 xl:pb-24" ref={ref}>
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row">
           {/* img */}
@@ -21,7 +31,7 @@ const About = () => {
             variants={fadeIn('right', 0.2)}  
             initial="hidden"
             whileInView={"show"}
-            viewPort={{once: false, amount: 0.4}}
+            viewport={{once: false, amount: 0.4}}
           >
             <Image 
               src={'/about/img2.png'}
@@ -36,7 +46,7 @@ const About = () => {
             variants={fadeIn('left', 0.5)}
             initial="hidden"
             whileInView={"show"}
-            viewPort={{ once: false, amount: 0.4 }}  
+            viewport={{ once: false, amount: 0.4 }}  
           >
             <h2 className="h2 mb-[38px]">About Hotely</h2>
             <p>
@@ -47,7 +57,7 @@ const About = () => {
             </p>
             {/* stats */}
             <div className="my-5 xl:my-10 min-h-[35px]">
-              <Stats />
+              { inView && <Stats /> }
             </div>
             <p className="mb-10">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
