@@ -17,7 +17,7 @@ const About = () => {
   });
 
   const [ref, inView] = useInView({
-    threshold: !isMobile ? 0.5 : null
+    threshold: !isMobile ? 0.5 : null   // Si no estamos en mobil inView=true si viewPort se muestra el 50%
   });
   
 
