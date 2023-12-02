@@ -31,7 +31,13 @@ const About = () => {
             />
           </motion.div>
           {/* text */}
-          <div className="xl:max-w-[470px]">
+          <motion.div 
+            className="xl:max-w-[470px]"
+            variants={fadeIn('left', 0.5)}
+            initial="hidden"
+            whileInView={"show"}
+            viewPort={{ once: false, amount: 0.4 }}  
+          >
             <h2 className="h2 mb-[38px]">About Hotely</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
@@ -52,7 +58,7 @@ const About = () => {
             >
               Explore More
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
