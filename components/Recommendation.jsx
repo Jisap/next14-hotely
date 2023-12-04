@@ -67,8 +67,26 @@ const Recommendation = () => {
           {recommendationData.map((hotel, index) => {
             return (
               <SwiperSlide key={index}>
-                <div>text</div>
-                <div>image & testimonial text</div>
+                <div>
+                  {/* text */}
+                  <div>
+                    <h2 className="h2 mb-4">{hotel.name}</h2>
+                    <p className="text-soft_green text-sm mb-6">{hotel.location}</p>
+                    <p className="mb-[60px]">{hotel.desc}</p>
+                    <Button
+                      variant='accent'
+                      className='px-[44px]'
+                    >
+                      Book Now
+                    </Button>
+                    <div className="text-black">
+                      <span>{hotel.price}</span>
+                      <span>/Night</span>
+                    </div>
+                  </div>
+                  {/* image & testimonial */}
+                  <div>image & testimonial text</div>
+                </div>
               </SwiperSlide>
             )
           })}
