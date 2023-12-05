@@ -60,10 +60,29 @@ const recommendationData = [
 
 const Recommendation = () => {
   return (
-    <section>
+    <motion.section 
+      variants={fadeIn('up', 0.2)}
+      initial='hidden'
+      whileInView='show'
+      viewport={{ once: false, amount: 0 }}  
+      className="pb-12 xl:pt-[157px] xl-pb-[112px] bg-soft_green-secondary relative"
+    >
       {/* slider */}
-      <div>
-        <Swiper>
+      <motion.div
+        variants={fadeIn('up', 0.4)}
+        initial='hidden'
+        whileInView='show'
+        viewport={{once: false, amount: 0}}
+      >
+        <Swiper
+          modules={[Autoplay]}
+          autoplay={{
+            delay:4000,
+            disableOnInteraction: true
+          }}
+          loop
+          speed={2000}
+        >
           {recommendationData.map((hotel, index) => {
             return (
               <SwiperSlide key={index}>
@@ -113,8 +132,18 @@ const Recommendation = () => {
             )
           })}
         </Swiper>
-      </div>
-    </section>
+      </motion.div>
+      {/* pattern */}
+      <Image 
+        src={'/recommendation/pattern.svg'}
+        width={240}
+        height={240}
+        alt='pattern'
+        className="hidden xl:flex absolute left-[135px] -bottom-[120px]"
+
+      />
+
+    </motion.section>
   )
 }
 
