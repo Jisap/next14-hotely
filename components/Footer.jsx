@@ -13,8 +13,13 @@ const Footer = () => {
   return (
     <footer className="bg-soft_green-secondary relative pt-12 xl:pt-0">
       <div className="container mx-auto">
-        <div>
-          <div>
+        <motion.div
+          variants={fadeIn('up', 0.4)}
+          initial='hidden'
+          whileInView='show'
+          viewport={{ once: false, amount: 0 }}
+        >
+          <div className="flex flex-col xl:flex-row bg-white p-8 rounded-xl min-h-[394px] xl-p-20 xl:-translate-y-36 xl:gap-x-12">
             
             {/* logo & text */}
             <div className="xl:w-[470px] mb-6 xl:mb-0">
@@ -29,7 +34,7 @@ const Footer = () => {
               </Link>
               <p className="text-lg leading-9">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Excepteur sint occaecat cupidatat non proident.
               </p>
             </div>
 
@@ -66,6 +71,13 @@ const Footer = () => {
 
 
           </div>
+        </motion.div>
+        {/* copyright */}
+        <div className="py-12 xl:-mt-32 flex flex-col xl:flex-row xl:justify-between">
+          <p className="text-black font-semibold text-center mb-4 xl:mb-0">
+            Copyright &copy; 2023. All rights reserved.
+          </p>
+          <Socials containerStyles="flex gap-x-4 text-black mx-auto xl:mx-0"/>
         </div>
       </div>
     </footer>
